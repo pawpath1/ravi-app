@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+/* ── Tokens ── */
+.pw-root {
+  --cream: #FEFAF4;
+  --warm-white: #FFF8EE;
+  --bark: #2C1810;
+  --bark-60: #6B4C40;
+  --bark-30: #C4A99A;
+  --bark-10: #F2EAE4;
+  --amber: #F59E0B;
+  --amber-light: #FEF3C7;
+  --green: #16A34A;
+  --green-light: #DCFCE7;
+  --red: #DC2626;
+  --red-light: #FEE2E2;
+  --shadow: 0 1px 3px rgba(44,24,16,0.08), 0 4px 16px rgba(44,24,16,0.06);
+  --shadow-lg: 0 8px 32px rgba(44,24,16,0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--bark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+.pw-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--bark-10);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.pw-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pw-nav-paw { font-size: 1.4rem; }
+
+.pw-nav-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--bark);
+  letter-spacing: -0.02em;
+}
+
+.pw-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pw-vet-btn {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+.pw-vet-btn:hover { background: #b91c1c; transform: scale(1.02); }
+
+.pw-out-btn {
+  background: transparent;
+  border: 1px solid var(--bark-30);
+  color: var(--bark-60);
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.pw-out-btn:hover { border-color: var(--bark); color: var(--bark); }
+
+/* ── Main ── */
+.pw-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Hero ── */
+.pw-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.pw-hero-eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--amber);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.pw-hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--bark);
+  margin-bottom: 0.75rem;
+}
+
+.pw-hero-sub {
+  font-size: 1rem;
+  color: var(--bark-60);
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+.pw-buddy-chip {
+  background: var(--warm-white);
+  border: 1px solid var(--bark-10);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+  min-width: 240px;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.pw-buddy-avi {
+  font-size: 2.5rem;
+  background: var(--amber-light);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pw-buddy-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--bark);
+  margin-bottom: 0.15rem;
+}
+
+.pw-buddy-breed {
+  font-size: 0.8rem;
+  color: var(--bark-60);
+  margin-bottom: 0.5rem;
+}
+
+.pw-buddy-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.pw-tag {
+  background: var(--bark-10);
+  color: var(--bark-60);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Priority ── */
+.pw-priority {
+  background: var(--bark);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 2rem 2rem 1.75rem;
+  animation: fadeUp 0.5s 0.15s ease both;
+}
+
+.pw-priority-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  margin-bottom: 0.75rem;
+}
+
+.pw-priority-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+  line-height: 1.2;
+}
+
+.pw-stats {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.75rem;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.pw-stat {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pw-stat-div {
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 0.75rem 0;
+}
+
+.pw-stat-big {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.pw-stat-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.pw-cta {
+  background: var(--amber);
+  color: var(--bark);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+.pw-cta:hover { background: #d97706; transform: scale(1.02); }
+
+/* ── Section ── */
+.pw-section {
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+.pw-section-h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--bark);
+  margin-bottom: 1rem;
+}
+
+/* ── Quick access ── */
+.pw-quick-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pw-quick {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--warm-white);
+  border: 1px solid var(--bark-10);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.1s;
+  box-shadow: var(--shadow);
+}
+
+.pw-quick:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.pw-quick--vet { border-left: 3px solid var(--red); }
+.pw-quick--dev { border-left: 3px solid var(--amber); }
+.pw-quick--shop { border-left: 3px solid var(--green); }
+
+.pw-quick-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.pw-quick-text { flex: 1; }
+
+.pw-quick-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--bark);
+  margin-bottom: 0.15rem;
+}
+
+.pw-quick-sub {
+  font-size: 0.8rem;
+  color: var(--bark-60);
+}
+
+.pw-quick-arr {
+  color: var(--bark-30);
+  font-size: 1.1rem;
+}
+
+/* ── Plan ── */
+.pw-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.pw-progress-badge {
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+}
+
+.pw-week-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.pw-wtab {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--warm-white);
+  border: 1px solid var(--bark-10);
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--bark-60);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.pw-wtab--active {
+  background: var(--bark);
+  border-color: var(--bark);
+  color: #fff;
+}
+
+.pw-current-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pw-now-badge {
+  background: var(--amber);
+  color: var(--bark);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 50px;
+}
+
+.pw-week-body {
+  background: var(--warm-white);
+  border: 1px solid var(--bark-10);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.pw-week-focus-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--bark-30);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.pw-week-focus-val {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bark);
+  margin-bottom: 1.25rem;
+}
+
+.pw-ptabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.pw-ptab {
+  background: var(--bark-10);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--bark-60);
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pw-ptab--active {
+  background: var(--bark);
+  color: #fff;
+}
+
+.pw-ptab--flags-active {
+  background: var(--red) !important;
+}
+
+.pw-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pw-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--bark);
+  line-height: 1.5;
+}
+
+.pw-list-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--amber);
+  border-radius: 50%;
+  margin-top: 0.42rem;
+  flex-shrink: 0;
+}
+
+.pw-list-item--flag .pw-list-dot {
+  background: var(--red);
+}
+
+/* ── Products ── */
+.pw-products-sub {
+  font-size: 0.875rem;
+  color: var(--bark-60);
+  margin-bottom: 1rem;
+  margin-top: -0.5rem;
+}
+
+.pw-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.pw-product {
+  background: var(--warm-white);
+  border: 1px solid var(--bark-10);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: box-shadow 0.15s, transform 0.1s;
+}
+
+.pw-product:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pw-product-icon {
+  font-size: 1.75rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pw-product-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--bark);
+  line-height: 1.3;
+}
+
+.pw-product-size {
+  font-weight: 400;
+  color: var(--bark-60);
+  font-size: 0.85rem;
+}
+
+.pw-product-why {
+  font-size: 0.825rem;
+  color: var(--bark-60);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.pw-product-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pw-product-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bark);
+}
+
+.pw-product-ret {
+  font-size: 0.75rem;
+  color: var(--bark-60);
+}
+
+.pw-product-badge {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+/* ── Animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .pw-nav { padding: 0.75rem 1rem; }
+  .pw-main { padding: 1.5rem 1rem 3rem; }
+  .pw-hero { flex-direction: column; }
+  .pw-buddy-chip { min-width: unset; width: 100%; }
+  .pw-stats { flex-direction: column; }
+  .pw-stat-div { width: auto; height: 1px; margin: 0; }
+  .pw-ptabs { flex-wrap: wrap; }
+  .pw-plan-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
