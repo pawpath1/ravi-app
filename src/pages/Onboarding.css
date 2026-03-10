@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.ob-root {
+  --cream: #FEFAF4;
+  --warm: #FFF8EE;
+  --bark: #2C1810;
+  --bark-60: #6B4C40;
+  --bark-30: #C4A99A;
+  --bark-10: #F2EAE4;
+  --amber: #F59E0B;
+  --amber-bg: #FEF3C7;
+  --green: #16A34A;
+  --shadow: 0 2px 8px rgba(44,24,16,0.08), 0 8px 32px rgba(44,24,16,0.08);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  font-family: var(--font-body);
+  background: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+
+  background-image:
+    radial-gradient(ellipse 60% 40% at 20% 10%, rgba(245,158,11,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 90%, rgba(44,24,16,0.06) 0%, transparent 60%);
+}
+
+.ob-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 460px;
+  padding: 2.5rem 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Logo ── */
+.ob-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.ob-logo-paw { font-size: 1.3rem; }
+
+.ob-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--bark);
+  letter-spacing: -0.02em;
+}
+
+/* ── Progress ── */
+.ob-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.ob-progress-bar {
+  flex: 1;
+  height: 5px;
+  background: var(--bark-10);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.ob-progress-fill {
+  height: 100%;
+  background: var(--amber);
+  border-radius: 50px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ob-progress-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bark-30);
+  white-space: nowrap;
+}
+
+/* ── Screens ── */
+.ob-screen {
+  animation: obFadeUp 0.35s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes obFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ob-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.4rem;
+}
+
+.ob-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--bark);
+  margin-bottom: 1rem;
+}
+
+.ob-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--bark);
+  margin-bottom: 0.35rem;
+}
+
+.ob-sub {
+  font-size: 0.95rem;
+  color: var(--bark-60);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.ob-step-sub {
+  font-size: 0.82rem;
+  color: var(--bark-30);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Welcome screen ── */
+.ob-welcome-art {
+  position: relative;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ob-art-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ob-art-circle--1 {
+  width: 100px;
+  height: 100px;
+  background: var(--amber-bg);
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ob-art-circle--2 {
+  width: 70px;
+  height: 70px;
+  background: var(--bark-10);
+  top: 25px;
+  left: calc(50% + 30px);
+}
+
+.ob-art-emoji {
+  font-size: 3.5rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 8px rgba(44,24,16,0.15));
+}
+
+/* ── Form fields ── */
+.ob-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.ob-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+}
+
+.ob-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bark-60);
+  letter-spacing: 0.01em;
+}
+
+.ob-input {
+  background: var(--warm);
+  border: 1.5px solid var(--bark-10);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--bark);
+  padding: 0.7rem 0.9rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  width: 100%;
+}
+
+.ob-input:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(245,158,11,0.12);
+}
+
+.ob-input::placeholder { color: var(--bark-30); }
+
+.ob-hint {
+  font-size: 0.75rem;
+  color: var(--bark-30);
+  line-height: 1.4;
+}
+
+/* Age row */
+.ob-age-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ob-age-num {
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.ob-unit-toggle {
+  display: flex;
+  background: var(--warm);
+  border: 1.5px solid var(--bark-10);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex: 1;
+}
+
+.ob-unit-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--bark-60);
+  padding: 0.65rem 0.4rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.ob-unit-btn.active {
+  background: var(--bark);
+  color: #fff;
+}
+
+/* Breed dropdown */
+.ob-breed-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid var(--bark-10);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(44,24,16,0.12);
+  z-index: 50;
+  list-style: none;
+  overflow: hidden;
+}
+
+.ob-breed-item {
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--bark);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.ob-breed-item:hover { background: var(--warm); }
+
+/* First-time toggle */
+.ob-toggle-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ob-toggle-btn {
+  flex: 1;
+  background: var(--warm);
+  border: 1.5px solid var(--bark-10);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--bark-60);
+  padding: 0.7rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.ob-toggle-btn.active {
+  background: var(--amber-bg);
+  border-color: var(--amber);
+  color: var(--bark);
+  font-weight: 600;
+}
+
+/* ── Concerns ── */
+.ob-concerns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.ob-concern-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--warm);
+  border: 1.5px solid var(--bark-10);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--bark);
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  position: relative;
+}
+
+.ob-concern-btn:hover {
+  border-color: var(--bark-30);
+}
+
+.ob-concern-btn.active {
+  background: var(--amber-bg);
+  border-color: var(--amber);
+}
+
+.ob-concern-emoji { font-size: 1.2rem; flex-shrink: 0; }
+.ob-concern-label { flex: 1; }
+
+.ob-concern-check {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--amber);
+}
+
+/* ── Navigation ── */
+.ob-nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.ob-btn-primary {
+  flex: 1;
+  background: var(--bark);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, opacity 0.15s;
+}
+
+.ob-btn-primary:hover:not(:disabled) {
+  background: #1a0d08;
+  transform: scale(1.01);
+}
+
+.ob-btn-primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ob-btn-back {
+  background: transparent;
+  border: 1.5px solid var(--bark-10);
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--bark-60);
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.ob-btn-back:hover {
+  border-color: var(--bark-30);
+  color: var(--bark);
+}
+
+.ob-btn-ghost {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--bark-60);
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: color 0.15s;
+  margin-top: 0.25rem;
+}
+
+.ob-btn-ghost:hover { color: var(--bark); }
+
+/* ── Welcome screen buttons ── */
+.ob-welcome .ob-btn-primary {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Ready screen ── */
+.ob-ready {
+  text-align: center;
+}
+
+.ob-ready-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: obBounce 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes obBounce {
+  0%   { transform: scale(0.5); opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.ob-ready-h2 { margin-bottom: 0.5rem; }
+
+.ob-ready-sub {
+  margin-bottom: 1.5rem;
+}
+
+.ob-ready-list {
+  background: var(--warm);
+  border: 1px solid var(--bark-10);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  text-align: left;
+}
+
+.ob-ready-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  color: var(--bark);
+  line-height: 1.5;
+}
+
+.ob-ready-check { flex-shrink: 0; }
+
+.ob-ready-cta {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  background: var(--amber);
+  color: var(--bark);
+}
+
+.ob-ready-cta:hover:not(:disabled) {
+  background: #d97706;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .ob-card { padding: 1.75rem 1.25rem 1.5rem; }
+  .ob-toggle-row { flex-direction: column; }
+}
